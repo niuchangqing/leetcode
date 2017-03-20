@@ -55,7 +55,7 @@ public class LongestSubstring1 {
 				map.put(c, 1);
 			}
 			stack.push(c);
-		}
+		} 
 		System.out.println(map);
 
 		int max = 0, temp = 0;
