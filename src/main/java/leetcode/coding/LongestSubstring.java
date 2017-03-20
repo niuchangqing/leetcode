@@ -36,5 +36,5 @@ public class LongestSubstring {
 		Log.logSingleLine("time is", sw.elapsed(TimeUnit.MICROSECONDS), "ms");
 		return count;
 	}
-
+	
 }
