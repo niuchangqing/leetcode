@@ -1,10 +1,8 @@
 package leetcode.coding;
 
-import java.util.concurrent.TimeUnit;
+import java.util.Map;
 
-import com.google.common.base.Stopwatch;
-
-import leetcode.log.Log;
+import com.google.common.collect.Maps;
 
 public class LongestSubstring {
 	/**
@@ -22,19 +20,24 @@ public class LongestSubstring {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		String text = "abcabcbb";
+		test(text);
 	}
 
-	public static int lengthOfLongestSubstring(String s) {
-		int count = 0;
-		Stopwatch sw = Stopwatch.createStarted();
-		char[] c = s.toCharArray();
-		
-		
-		
-		Log.logSingleLine("time is", sw.elapsed(TimeUnit.MICROSECONDS), "ms");
-		return count;
+	public static int test(String s) {
+		int max = 0;//不重复的最大长度
+		Map<Character, Integer> map = Maps.newHashMap();
+		//j:该字符上次的位置（重复后+1）
+		for (int i = 0, j = 0; i < s.length(); i++) {
+			char c = s.charAt(i);
+			if (map.containsKey(c)) {
+				j = Math.max(j, map.get(c) + 1);
+			}
+			map.put(c, i);
+			max = Math.max(max, i - j + 1);
+		}
+		System.out.println(max);
+		return max;
 	}
-	
+
 }
