@@ -9,6 +9,10 @@ import com.google.common.base.Stopwatch;
 
 import leetcode.log.Log;
 
+/**
+ * @author Niucqing
+ * @email niucqing@gmail.com
+ */
 public class LongestSubstring1 {
 
 	/**
